@@ -176,18 +176,38 @@ const About = () => {
           </div>
         </section>
       </main>
-      <div className="company-logos-section py-12 bg-gradient-to-r from-primary-dark/20 to-primary/10">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8 text-primary-foreground">Companies We've Worked With</h2>
-          <div className="company-logos-container overflow-hidden relative">
-            <div className="company-logos-track flex items-center animate-logos-scroll">
-              <img src="public/companyA.png" alt="Nsaki Access Zambia Limited" className="company-logo mx-8" />
-              <img src="public/companyB.png" alt="Trademwa Installation Ltd" className="company-logo mx-8" />
-              <img src="public/companyC.png" alt="Borika Investments Limited" className="company-logo mx-8" />
+           {/* Company Logos Section */}
+          <div className="company-logos-section py-12 bg-gradient-to-r from-primary-dark/20 to-primary/10">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-2xl font-bold text-center mb-8 text-primary-foreground">Companies We've Worked With</h2>
+              <div className="overflow-hidden relative">
+                <div
+                  className="flex items-center gap-12 animate-[logos-scroll_12s_linear_infinite]"
+                  style={{ minWidth: 'max-content' }}
+                >
+                  <img src="/companyA.png" alt="Nsaki Access Zambia Limited" className="h-20 w-auto object-contain mx-4" />
+                  <img src="/companyB.png" alt="Trademwa Installation Ltd" className="h-20 w-auto object-contain mx-4" />
+                  <img src="/companyC.png" alt="Borika Investments Limited" className="h-20 w-auto object-contain mx-4" />
+                  {/* Repeat logos for seamless scroll */}
+                  <img src="/companyA.png" alt="Nsaki Access Zambia Limited" className="h-20 w-auto object-contain mx-4" />
+                  <img src="/companyB.png" alt="Trademwa Installation Ltd" className="h-20 w-auto object-contain mx-4" />
+                  <img src="/companyC.png" alt="Borika Investments Limited" className="h-20 w-auto object-contain mx-4" />
+                </div>
+                {/* Custom keyframes for Tailwind animation */}
+                <style>
+                  {`
+                    @keyframes logos-scroll {
+                      0% { transform: translateX(0); }
+                      100% { transform: translateX(50%); }
+                    }
+                    .animate-[logos-scroll_12s_linear_infinite] {
+                      animation: logos-scroll 12s linear infinite;
+                    }
+                  `}
+                </style>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
       <Footer />
     </div>
   );
