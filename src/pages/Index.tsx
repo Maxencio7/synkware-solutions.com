@@ -114,7 +114,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-8 py-4 border-accent/50 text-primary-foreground hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
+                className="text-lg px-8 py-4 border-accent/50 text-primary hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
                 onClick={() => {
                   // Create a downloadable PDF or open in new tab
                   const link = document.createElement('a');
@@ -296,7 +296,7 @@ const Index = () => {
                     </Button>
                   </Link>
                   <Link to="/services">
-                    <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300">
+                    <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300">
                       Explore Our Services
                       <ArrowRight size={20} className="ml-2" />
                     </Button>
