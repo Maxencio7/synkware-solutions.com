@@ -183,9 +183,9 @@ const About = () => {
           <h2 className="text-2xl font-bold text-center mb-8 text-primary-foreground">Companies We've Worked With</h2>
           <div className="company-logos-container overflow-hidden relative">
             <div className="company-logos-track flex items-center animate-logos-scroll">
-              <img src="/companyA.png" alt="Company A" className="company-logo mx-8" />
-              <img src="/companyB.png" alt="Company B" className="company-logo mx-8" />
-              <img src="/companyC.png" alt="Company C" className="company-logo mx-8" />
+              <img src="public/companyA.png" alt="Nsaki Access Zambia Limited" className="company-logo mx-8" />
+              <img src="public/companyB.png" alt="Trademwa Installation Ltd" className="company-logo mx-8" />
+              <img src="public/companyC.png" alt="Borika Investments Limited" className="company-logo mx-8" />
             </div>
           </div>
         </div>
