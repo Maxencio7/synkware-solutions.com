@@ -19,8 +19,8 @@ const Footer = () => {
               Secure. Scale. Synk. Modern software and AI systems for a smarter Africa.
             </p>
             <div className="space-y-2 text-sm text-primary-foreground/80">
-              <p>Company Reg No: [To be updated]</p>
-              <p>Tax ID: [To be updated]</p>
+              <p>Company Reg No: 320251049126 </p>
+              <p>Tax ID: Synkware Solutions</p>
               <p>PACRA Registered | ZRA Compliant</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail size={16} />
-                <span className="text-primary-foreground/80 text-sm">info@synkware.com</span>
+                <span className="text-primary-foreground/80 text-sm">synkwaresolutions@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone size={16} />
@@ -71,7 +71,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Linkedin size={16} />
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/company/synkware-solutions" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   LinkedIn
