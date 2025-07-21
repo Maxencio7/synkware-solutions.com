@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Linkedin, MapPin, Phone } from 'lucide-react';
+import { Mail, Linkedin,Instagram, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -75,6 +75,15 @@ const Footer = () => {
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   LinkedIn
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Instagram size={16} />
+                <a 
+                  href="https://www.instagram.com/synkware?igsh=N2tsOXhxNHlqcDI4" 
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                >
+                  Instagram
                 </a>
               </div>
             </div>
