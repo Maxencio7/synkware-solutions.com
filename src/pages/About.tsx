@@ -185,7 +185,7 @@ const About = () => {
                   className="flex items-center gap-12 animate-[logos-scroll_12s_linear_infinite]"
                   style={{ minWidth: 'max-content' }}
                 >
-                  <img src="/companyA.png" alt="Nsaki Access Zambia Limited" className="h-20 w-auto object-contain mx-4" />
+                  <img src="/companyA.png" alt="Apeiron Mining Limited" className="h-20 w-auto object-contain mx-4" />
                   <img src="/companyB.png" alt="Trademwa Installation Ltd" className="h-20 w-auto object-contain mx-4" />
                   <img src="/companyC.png" alt="Borika Investments Limited" className="h-20 w-auto object-contain mx-4" />
                   {/* Repeat logos for seamless scroll */}
