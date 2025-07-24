@@ -286,6 +286,27 @@ const About = () => {
                   className="h-20 w-auto object-contain mx-4"
                 />
               </a>
+              <a href="https://www.apeiron-mining.com/">
+                <img
+                  src="/companyA.png"
+                  alt="Apeiron Mining Limited"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
+              <a href="https://www.trademwainstallations.com/">
+                <img
+                  src="/companyB.png"
+                  alt="Trademwa Installation Ltd"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
+              <a href="https://www.borikainvestmentsltd.com/">
+                <img
+                  src="/companyC.png"
+                  alt="Borika Investments Limited"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
             </div>
             {/* Custom keyframes for Tailwind animation */}
             <style>
