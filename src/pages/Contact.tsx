@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Linkedin,Instagram, Send } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -304,11 +304,20 @@ const Contact = () => {
                     </h3>
                     <div className="flex items-center space-x-4">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/company/synkware-solutions"
                         className="flex items-center space-x-2 text-card-foreground hover:text-accent transition-colors"
                       >
                         <Linkedin size={20} />
                         <span>LinkedIn</span>
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <a
+                        href="https://www.instagram.com/synkware?igsh=N2tsOXhxNHlqcDI4"
+                        className="flex items-center space-x-2 text-card-foreground hover:text-accent transition-colors"
+                      >
+                        <Instagram size={20} />
+                        <span>Instagram</span>
                       </a>
                     </div>
                   </CardContent>

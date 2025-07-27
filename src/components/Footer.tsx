@@ -80,7 +80,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Instagram size={16} />
                 <a 
-                  href="https://www.instagram.com/synkware?igsh=N2tsOXhxNHlqcDI4" 
+                  href="s" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   Instagram
