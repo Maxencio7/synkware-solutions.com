@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <div className="space-y-2 text-sm text-primary-foreground/80">
               <p>Company Reg No: 320251049126 </p>
-              <p>Tax ID: Synkware Solutions</p>
+              <p>Tax ID: 2889085869</p>
               <p>PACRA Registered | ZRA Compliant</p>
             </div>
           </div>
