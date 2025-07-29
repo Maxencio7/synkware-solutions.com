@@ -124,7 +124,7 @@ const Index = () => {
                   // Create a downloadable PDF or open in new tab
                   const link = document.createElement("a");
                   link.href =
-                    "https://drive.google.com/file/d/1fbjxBNXbWazeoaE8VSl3ish-M5glF004/view?usp=sharing"; // Replace with actual company profile URL/file
+                    "https://drive.google.com/file/d/1d-GA8Qhi7rpOp6f-5a-D1E6dziEN3f8v/view?usp=sharing"; // Replace with actual company profile URL/file
                   link.download = "SYNKWARE-Solutions-Company-Profile.pdf";
                   link.target = "_blank";
                   link.click();
