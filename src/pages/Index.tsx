@@ -47,7 +47,7 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: "50+", label: "Projects Delivered" },
+    { number: "5+", label: "Projects Delivered" },
     { number: "95%", label: "Client Satisfaction" },
     { number: "24/7", label: "Support Available" },
     { number: "5+", label: "Years Experience" },
@@ -161,7 +161,7 @@ const Index = () => {
          {/* Company Logos Section */}
       <div className="company-logos-section py-12 bg-gradient-to-r from-primary-dark/20 to-primary/10">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8 text-primary-foreground">
+          <h2 className="text-2xl font-bold text-center mb-8 text-black">
             TRUSTED BY
           </h2>
           <div className="overflow-hidden relative">
