@@ -254,7 +254,7 @@ const Index = () => {
                     className="h-20 w-auto object-contain mx-4"
                   />
                 </a>
-                  <a href="https://www.apeiron-mining.com/">
+                <a href="https://www.apeiron-mining.com/">
                   <img
                     src="/companyA.png"
                     alt="Apeiron Mining Limited"
@@ -275,7 +275,7 @@ const Index = () => {
                     className="h-20 w-auto object-contain mx-4"
                   />
                 </a>
-                  <a href="https://www.apeiron-mining.com/">
+                <a href="https://www.apeiron-mining.com/">
                   <img
                     src="/companyA.png"
                     alt="Apeiron Mining Limited"
@@ -296,7 +296,7 @@ const Index = () => {
                     className="h-20 w-auto object-contain mx-4"
                   />
                 </a>
-                  <a href="https://www.apeiron-mining.com/">
+                <a href="https://www.apeiron-mining.com/">
                   <img
                     src="/companyA.png"
                     alt="Apeiron Mining Limited"
@@ -317,7 +317,7 @@ const Index = () => {
                     className="h-20 w-auto object-contain mx-4"
                   />
                 </a>
-                  <a href="https://www.apeiron-mining.com/">
+                <a href="https://www.apeiron-mining.com/">
                   <img
                     src="/companyA.png"
                     alt="Apeiron Mining Limited"
@@ -393,6 +393,7 @@ const Index = () => {
                         variant="outline"
                         size="sm"
                         className="group-hover:gradient-luxury group-hover:text-accent-foreground group-hover:border-accent/30 transition-all duration-300"
+                        href="/services"
                       >
                         Learn More
                         <ArrowRight size={16} className="ml-2" />
@@ -428,6 +429,7 @@ const Index = () => {
                         variant="outline"
                         size="sm"
                         className="group-hover:gradient-luxury group-hover:text-accent-foreground group-hover:border-accent/30 transition-all duration-300"
+                        href="/services"
                       >
                         Learn More
                         <ArrowRight size={16} className="ml-2" />
