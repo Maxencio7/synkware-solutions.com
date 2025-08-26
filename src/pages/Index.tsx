@@ -119,7 +119,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-4 border-accent/50 text-primary bg-gold hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
+                className="text-lg px-8 py-4 border-accent/50 text-primary bg-accent hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
                 onClick={() => {
                   // Create a downloadable PDF or open in new tab
                   const link = document.createElement("a");
