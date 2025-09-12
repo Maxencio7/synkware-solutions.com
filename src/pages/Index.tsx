@@ -14,7 +14,7 @@ import {
   CheckCircle,
   Download,
   Calendar,
-} from "lucide-react";
+} from "lucide-react"; 
 import heroImage from "@/assets/hero-tech.jpg";
 
 const Index = () => {
