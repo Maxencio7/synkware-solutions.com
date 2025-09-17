@@ -95,7 +95,7 @@ const Footer = () => {
             © 2025 SYNKWARE Solutions. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground text-xs transition-colors">
+            <Link to="https://www.synkwaresolutions.com/privacy" className="text-primary-foreground/60 hover:text-primary-foreground text-xs transition-colors">
               Privacy & Data Policy
             </Link>
             <Link to="#" className="text-primary-foreground/60 hover:text-primary-foreground text-xs transition-colors">
