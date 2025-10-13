@@ -295,7 +295,7 @@ const Services = () => {
                   <Button size="lg" variant="secondary" className="shadow-elegant">
                     Book a Consultation
                   </Button>
-                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground bg-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary">
                     Download Company Profile
                   </Button>
                 </div>
