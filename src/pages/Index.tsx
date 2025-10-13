@@ -46,9 +46,9 @@ const services = [
 ];
 
 const stats = [
-  { number: "500+", label: "Projects Completed", icon: Target },
+  { number: "10+", label: "Projects Completed", icon: Target },
   { number: "99%", label: "Client Satisfaction", icon: Star },
-  { number: "50+", label: "Countries Served", icon: Globe },
+  { number: "3+", label: "Countries Served", icon: Globe },
   { number: "24/7", label: "Support Available", icon: Clock }
 ];
 
@@ -226,7 +226,7 @@ const Index = () => {
               
               </p>
               <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300">
+                <Button variant="outline" size="lg" className="border-accent/30 bg-accent/50 hover:bg-accent/10 hover:border-accent transition-all duration-300">
                   Get In Touch
                   <ArrowRight size={20} className="ml-2" />
                 </Button>
