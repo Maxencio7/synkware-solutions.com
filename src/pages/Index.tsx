@@ -449,7 +449,7 @@ const Index = () => {
                     </Button>
                   </Link>
                   <Link to="/services">
-                    <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300">
+                    <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300">
                       Explore Our Services
                       <ArrowRight size={20} className="ml-2" />
                     </Button>
