@@ -24,7 +24,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "info@synkware.com",
+      details: "MaxencioMbewe@SynkwareSolutions.com",
       description: "Send us an email anytime",
     },
     {
