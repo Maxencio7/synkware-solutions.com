@@ -277,7 +277,7 @@ const Index = () => {
 
             <div className="mt-16 text-center">
               <p className="text-muted-foreground mb-6">
-                Want to become a partner?
+                For Professional Quality Service and Products
               </p>
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300">
