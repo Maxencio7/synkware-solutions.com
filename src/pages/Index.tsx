@@ -139,7 +139,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-8 py-4 border-accent/50 text-primary-foreground hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
+                className="text-lg px-8 py-4 border-accent/50 text-primary-foreground bg-accent/50 hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = '#';
@@ -223,7 +223,7 @@ const Index = () => {
 
             <div className="mt-16 text-center">
               <p className="text-muted-foreground mb-6">
-                Want to become a partner?
+              
               </p>
               <Link to="/contact">
                 <Button variant="outline" size="lg" className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300">
