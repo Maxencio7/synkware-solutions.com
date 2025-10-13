@@ -228,6 +228,67 @@ const Index = () => {
           </div>
         </section>
 
+           {/* Partners Section */}
+        <section className="py-20 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
+                Trusted Partners
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+                Powering Success Together
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Join the leading organizations who trust SYNKWARE to transform their digital landscape.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                {[
+                  { logo: partnerMicrosoft, name: "Microsoft" },
+                  { logo: partnerSAP, name: "SAP" },
+                  { logo: partnerDell, name: "Dell" },
+                  { logo: partnerHP, name: "HP" },
+                  { logo: partnerAWS, name: "AWS" },
+                  { logo: partner4sight, name: "4sight" },
+                  { logo: partnerHuawei, name: "Huawei" },
+                  { logo: partnerGoogle, name: "Google" },
+                  { logo: partnerABB, name: "ABB" }
+                ].map((partner, index) => (
+                  <div 
+                    key={index}
+                    className="group relative flex items-center justify-center p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 shadow-sm hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                      animationFillMode: 'backwards'
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="relative w-full h-auto max-h-24 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <p className="text-muted-foreground mb-6">
+                Want to become a partner?
+              </p>
+              <Link to="/contact">
+                <Button variant="outline" size="lg" className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300">
+                  Get In Touch
+                  <ArrowRight size={20} className="ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
