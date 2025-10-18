@@ -31,7 +31,8 @@ const Services = () => {
         'Penetration Testing',
         'Compliance Frameworks',
         'Incident Response',
-        'Security Training'
+        'Security Training',
+        'SIEM Intergration'
       ],
       badge: 'Government Grade'
     },
