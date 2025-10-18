@@ -1,10 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { BarChart3, Users, Zap, TrendingUp, Shield, Clock, Cpu, Target, ArrowRight, Download, Phone, CheckCircle, Star, Globe, Award, Calendar, Quote } from "lucide-react";
+import {
+  BarChart3,
+  Users,
+  Zap,
+  TrendingUp,
+  Shield,
+  Clock,
+  Cpu,
+  Target,
+  ArrowRight,
+  Download,
+  Phone,
+  CheckCircle,
+  Star,
+  Globe,
+  Award,
+  Calendar,
+  Quote,
+} from "lucide-react";
 import heroImage from "@/assets/hero-automation.jpg";
 import serviceBIImage from "@/assets/service-bi.jpg";
 import serviceLogisticsImage from "@/assets/service-logistics.jpg";
@@ -20,131 +44,164 @@ import partner4sight from "@/assets/partner-4sight.png";
 import partnerHuawei from "@/assets/partner-huawei.png";
 import partnerGoogle from "@/assets/partner-google.png";
 import partnerABB from "@/assets/partner-abb.png";
+import partnerlog from "@/assets/partner-log.png";
 
 const services = [
   {
     icon: Cpu,
     title: "AI Automation Platforms",
-    description: "Custom-built intelligent systems that streamline your business operations, reduce manual work, and increase efficiency by up to 80%.",
+    description:
+      "Custom-built intelligent systems that streamline your business operations, reduce manual work, and increase efficiency by up to 80%.",
     image: serviceAutomationImage,
-    features: ["Process Automation", "AI Integration", "Custom Workflows", "Real-time Monitoring"]
+    features: [
+      "Process Automation",
+      "AI Integration",
+      "Custom Workflows",
+      "Real-time Monitoring",
+    ],
   },
   {
     icon: BarChart3,
     title: "Business Intelligence",
-    description: "Transform your data into actionable insights with powerful analytics, predictive modeling, and comprehensive reporting tools.",
+    description:
+      "Transform your data into actionable insights with powerful analytics, predictive modeling, and comprehensive reporting tools.",
     image: serviceBIImage,
-    features: ["Data Analytics", "Predictive Modeling", "Custom Dashboards", "Real-time Reports"]
+    features: [
+      "Data Analytics",
+      "Predictive Modeling",
+      "Custom Dashboards",
+      "Real-time Reports",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Logistics Solutions",
-    description: "Optimize your supply chain with smart tracking, route optimization, inventory management, and automated shipping systems.",
+    description:
+      "Optimize your supply chain with smart tracking, route optimization, inventory management, and automated shipping systems.",
     image: serviceLogisticsImage,
-    features: ["Supply Chain Optimization", "Route Planning", "Inventory Management", "Shipment Tracking"]
-  }
+    features: [
+      "Supply Chain Optimization",
+      "Route Planning",
+      "Inventory Management",
+      "Shipment Tracking",
+    ],
+  },
 ];
 
 const stats = [
   { number: "10+", label: "Projects Completed", icon: Target },
   { number: "99%", label: "Client Satisfaction", icon: Star },
   { number: "3+", label: "Countries Served", icon: Globe },
-  { number: "24/7", label: "Support Available", icon: Clock }
+  { number: "24/7", label: "Support Available", icon: Clock },
 ];
 
 const features = [
   {
     icon: Shield,
     title: "Enterprise Security",
-    description: "Bank-level encryption and security protocols to protect your sensitive business data."
+    description:
+      "Bank-level encryption and security protocols to protect your sensitive business data.",
   },
   {
     icon: Zap,
     title: "Lightning Fast",
-    description: "Optimized performance ensuring your systems run at peak efficiency with minimal latency."
+    description:
+      "Optimized performance ensuring your systems run at peak efficiency with minimal latency.",
   },
   {
     icon: Users,
     title: "Expert Team",
-    description: "Dedicated professionals with decades of experience in automation and business intelligence."
+    description:
+      "Dedicated professionals with decades of experience in automation and business intelligence.",
   },
   {
     icon: Award,
     title: "Proven Results",
-    description: "Track record of delivering measurable ROI and business transformation for our clients."
-  }
+    description:
+      "Track record of delivering measurable ROI and business transformation for our clients.",
+  },
 ];
 
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, TechCorp Industries",
-    content: "SYNKWARE transformed our logistics operations. We've seen a 60% reduction in shipping costs and 99% accuracy in deliveries.",
-    rating: 5
+    content:
+      "SYNKWARE transformed our logistics operations. We've seen a 60% reduction in shipping costs and 99% accuracy in deliveries.",
+    rating: 5,
   },
   {
     name: "Michael Chen",
     role: "Operations Director, Global Logistics Ltd",
-    content: "The AI automation platform saved us 40 hours per week in manual processing. ROI was achieved within 3 months.",
-    rating: 5
+    content:
+      "The AI automation platform saved us 40 hours per week in manual processing. ROI was achieved within 3 months.",
+    rating: 5,
   },
   {
     name: "Emma Rodriguez",
     role: "CFO, Manufacturing Solutions Inc",
-    content: "Their business intelligence dashboard gave us insights we never had before. Data-driven decisions are now our standard.",
-    rating: 5
-  }
+    content:
+      "Their business intelligence dashboard gave us insights we never had before. Data-driven decisions are now our standard.",
+    rating: 5,
+  },
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img 
-              src={heroImage} 
-              alt="Professional automation workspace" 
+            <img
+              src={heroImage}
+              alt="Professional automation workspace"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 gradient-midnight opacity-85" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent" />
           </div>
-          
+
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <Badge className="mb-6 btn-gold border-accent/30 shadow-gold">
               Leading Digital Transformation Solutions
             </Badge>
-            
+
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 tracking-tight drop-shadow-2xl">
-              Automate. <span className="text-accent drop-shadow-glow">Analyze.</span> Accelerate.
+              Automate.{" "}
+              <span className="text-accent drop-shadow-glow">Analyze.</span>{" "}
+              Accelerate.
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your business with AI-powered automation, intelligent analytics, and seamless logistics solutions.
+              Transform your business with AI-powered automation, intelligent
+              analytics, and seamless logistics solutions.
             </p>
-            
+
             <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
-              Join 500+ companies worldwide who trust SYNKWARE to drive their digital transformation and achieve measurable results.
+              Join 500+ companies worldwide who trust SYNKWARE to drive their
+              digital transformation and achieve measurable results.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="btn-gold text-lg px-8 py-4 font-semibold shadow-luxury hover:scale-105 transition-all duration-300">
+              <Button
+                size="lg"
+                className="btn-gold text-lg px-8 py-4 font-semibold shadow-luxury hover:scale-105 transition-all duration-300"
+              >
                 <Calendar className="mr-2" size={20} />
                 Schedule Free Consultation
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-lg px-8 py-4 border-accent/50 text-primary-foreground bg-accent/50 hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '#';
-                  link.download = 'SYNKWARE-Solutions-Company-Profile.pdf';
-                  link.target = '_blank';
+                  const link = document.createElement("a");
+                  link.href = "#";
+                  link.download = "SYNKWARE-Solutions-Company-Profile.pdf";
+                  link.target = "_blank";
                   link.click();
                 }}
               >
@@ -160,13 +217,20 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <Card key={index} className="text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 group">
+                <Card
+                  key={index}
+                  className="text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 group"
+                >
                   <CardContent className="p-6">
                     <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <stat.icon size={32} className="text-accent-foreground" />
                     </div>
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                    <div className="text-muted-foreground font-medium">{stat.label}</div>
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-muted-foreground font-medium">
+                      {stat.label}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -185,7 +249,8 @@ const Index = () => {
                 Powering Success Together
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Join the leading organizations who trust SYNKWARE to transform their digital landscape.
+                Join the leading organizations who trust SYNKWARE to transform
+                their digital landscape.
               </p>
             </div>
 
@@ -200,19 +265,20 @@ const Index = () => {
                   { logo: partner4sight, name: "4sight" },
                   { logo: partnerHuawei, name: "Huawei" },
                   { logo: partnerGoogle, name: "Google" },
-                  { logo: partnerABB, name: "ABB" }
+                  { logo: partnerABB, name: "ABB" },
+                  { logo: partnerlog, name: "Logpoint" },
                 ].map((partner, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="group relative flex items-center justify-center p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 shadow-sm hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in"
                     style={{
                       animationDelay: `${index * 100}ms`,
-                      animationFillMode: 'backwards'
+                      animationFillMode: "backwards",
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <img 
-                      src={partner.logo} 
+                    <img
+                      src={partner.logo}
                       alt={partner.name}
                       className="relative w-full h-auto max-h-24 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                     />
@@ -222,11 +288,13 @@ const Index = () => {
             </div>
 
             <div className="mt-16 text-center">
-              <p className="text-muted-foreground mb-6">
-              
-              </p>
+              <p className="text-muted-foreground mb-6"></p>
               <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-accent/30 bg-accent/50 hover:bg-accent/10 hover:border-accent transition-all duration-300">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-accent/30 bg-accent/50 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                >
                   Get In Touch
                   <ArrowRight size={20} className="ml-2" />
                 </Button>
@@ -246,28 +314,37 @@ const Index = () => {
                 Comprehensive Digital Solutions
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                From AI automation to business intelligence, we deliver end-to-end solutions that transform how you operate and compete.
+                From AI automation to business intelligence, we deliver
+                end-to-end solutions that transform how you operate and compete.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
               {services.map((service, index) => (
-                <Card key={index} className="group gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <Card
+                  key={index}
+                  className="group gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                >
                   <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
+                    <img
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="w-12 h-12 gradient-luxury rounded-lg flex items-center justify-center">
-                        <service.icon size={24} className="text-accent-foreground" />
+                        <service.icon
+                          size={24}
+                          className="text-accent-foreground"
+                        />
                       </div>
                     </div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-primary">
+                      {service.title}
+                    </CardTitle>
                     <CardDescription className="text-muted-foreground">
                       {service.description}
                     </CardDescription>
@@ -275,8 +352,14 @@ const Index = () => {
                   <CardContent>
                     <div className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                          <CheckCircle size={16} className="text-accent mr-2 flex-shrink-0" />
+                        <div
+                          key={featureIndex}
+                          className="flex items-center text-sm text-muted-foreground"
+                        >
+                          <CheckCircle
+                            size={16}
+                            className="text-accent mr-2 flex-shrink-0"
+                          />
                           {feature}
                         </div>
                       ))}
@@ -292,7 +375,10 @@ const Index = () => {
 
             <div className="text-center">
               <Link to="/services">
-                <Button size="lg" className="gradient-primary text-primary-foreground shadow-elegant hover:scale-105 transition-all duration-300">
+                <Button
+                  size="lg"
+                  className="gradient-primary text-primary-foreground shadow-elegant hover:scale-105 transition-all duration-300"
+                >
                   View All Services
                   <ArrowRight size={20} className="ml-2" />
                 </Button>
@@ -304,7 +390,11 @@ const Index = () => {
         {/* Features Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-5">
-            <img src={techBgImage} alt="Technology background" className="w-full h-full object-cover" />
+            <img
+              src={techBgImage}
+              alt="Technology background"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -315,19 +405,30 @@ const Index = () => {
                 Built for Performance
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Our solutions are designed with enterprise-grade security, lightning-fast performance, and proven results.
+                Our solutions are designed with enterprise-grade security,
+                lightning-fast performance, and proven results.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <Card key={index} className="group text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
+                <Card
+                  key={index}
+                  className="group text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+                >
                   <CardContent className="p-6">
                     <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon size={28} className="text-accent-foreground" />
+                      <feature.icon
+                        size={28}
+                        className="text-accent-foreground"
+                      />
                     </div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                    <h3 className="text-lg font-semibold text-primary mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -346,30 +447,47 @@ const Index = () => {
                 Trusted by Industry Leaders
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Discover how we've helped businesses achieve remarkable results and transform their operations.
+                Discover how we've helped businesses achieve remarkable results
+                and transform their operations.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-300 group hover:-translate-y-1">
+                <Card
+                  key={index}
+                  className="gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-300 group hover:-translate-y-1"
+                >
                   <CardContent className="p-8">
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={20} className="text-accent fill-current" />
+                        <Star
+                          key={i}
+                          size={20}
+                          className="text-accent fill-current"
+                        />
                       ))}
                     </div>
                     <Quote size={24} className="text-accent mb-4" />
-                    <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
+                    <p className="text-muted-foreground mb-6 italic">
+                      "{testimonial.content}"
+                    </p>
                     <div className="flex items-center">
                       <div className="w-12 h-12 gradient-luxury rounded-full flex items-center justify-center mr-4">
                         <span className="text-accent-foreground font-semibold">
-                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                          {testimonial.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
                         </span>
                       </div>
                       <div>
-                        <div className="font-semibold text-primary">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        <div className="font-semibold text-primary">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -391,26 +509,34 @@ const Index = () => {
                   World-Class Expertise
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Our team combines decades of experience with cutting-edge innovation to deliver solutions that exceed expectations.
+                  Our team combines decades of experience with cutting-edge
+                  innovation to deliver solutions that exceed expectations.
                 </p>
-                
+
                 <div className="space-y-4 mb-8">
                   {[
-                    'AI & Machine Learning Specialists',
-                    'Enterprise Architecture Experts',
-                    'DevOps & Cloud Infrastructure Masters',
-                    'Business Intelligence Analysts',
-                    '24/7 Dedicated Support Team'
+                    "AI & Machine Learning Specialists",
+                    "Enterprise Architecture Experts",
+                    "DevOps & Cloud Infrastructure Masters",
+                    "Business Intelligence Analysts",
+                    "24/7 Dedicated Support Team",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle size={20} className="text-accent flex-shrink-0" />
+                      <CheckCircle
+                        size={20}
+                        className="text-accent flex-shrink-0"
+                      />
                       <span className="text-muted-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <Link to="/about">
-                  <Button size="lg" variant="outline" className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  >
                     Meet Our Team
                     <ArrowRight size={20} className="ml-2" />
                   </Button>
@@ -418,8 +544,8 @@ const Index = () => {
               </div>
 
               <div className="relative">
-                <img 
-                  src={teamImage} 
+                <img
+                  src={teamImage}
                   alt="Professional team collaboration"
                   className="rounded-2xl shadow-luxury w-full h-auto"
                 />
@@ -439,17 +565,26 @@ const Index = () => {
                   Ready to Transform Your Business?
                 </h2>
                 <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-                  Join the digital revolution with SYNKWARE. Let's discuss how our solutions can drive your success and accelerate your growth.
+                  Join the digital revolution with SYNKWARE. Let's discuss how
+                  our solutions can drive your success and accelerate your
+                  growth.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/contact">
-                    <Button size="lg" className="btn-gold text-lg px-8 py-4 shadow-glow hover:scale-105 transition-all duration-300">
+                    <Button
+                      size="lg"
+                      className="btn-gold text-lg px-8 py-4 shadow-glow hover:scale-105 transition-all duration-300"
+                    >
                       <Phone className="mr-2" size={20} />
                       Get Started Today
                     </Button>
                   </Link>
                   <Link to="/services">
-                    <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300"
+                    >
                       Explore Our Services
                       <ArrowRight size={20} className="ml-2" />
                     </Button>
