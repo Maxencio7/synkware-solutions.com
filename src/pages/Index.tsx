@@ -181,7 +181,7 @@ const Index = () => {
             </p>
 
             <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
-              Join 500+ companies worldwide who trust SYNKWARE to drive their
+              Join 10+ companies worldwide who trust SYNKWARE to drive their
               digital transformation and achieve measurable results.
             </p>
 
