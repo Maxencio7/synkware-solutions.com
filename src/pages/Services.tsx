@@ -1,336 +1,378 @@
-import { useParams, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { ArrowLeft, Mail, Phone, Building } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { 
+  Shield, 
+  Cloud, 
+  Bot, 
+  Code, 
+  Settings,
+  ChevronDown,
+  ChevronUp,
+  CheckCircle,
+  Server,
+  Database,
+  Network,
+  Briefcase,
+  Package,
+  Cpu,
+  HardDrive
+} from 'lucide-react';
 
-const partnerData: Record<string, {
-  name: string;
-  logo: string;
-  description: string;
-  services: string[];
-  specialization: string;
-}> = {
-  microsoft: {
-    name: 'Microsoft',
-    logo: '/src/assets/partner-microsoft.png',
-    description: 'As an authorized Microsoft partner, Synkware Solutions delivers comprehensive Microsoft ecosystem services.',
-    services: [
-      'Microsoft 365 Business & Enterprise Licensing',
-      'Azure Cloud Infrastructure Setup & Management',
-      'Windows Server Deployment & Support',
-      'Microsoft Teams & Collaboration Solutions',
-      'Power Platform Development (Power Apps, Power BI)',
-      'Dynamics 365 Implementation',
-      'Microsoft Security Solutions'
-    ],
-    specialization: 'Cloud Productivity & Enterprise Solutions'
-  },
-  sap: {
-    name: 'SAP',
-    logo: '/src/assets/partner-sap.png',
-    description: 'Certified SAP partner providing end-to-end ERP implementation and optimization services.',
-    services: [
-      'SAP S/4HANA Implementation & Migration',
-      'SAP Business One for SMEs',
-      'SAP Module Customization & Development',
-      'SAP FICO, MM, SD, PP Modules',
-      'SAP Training & Change Management',
-      'SAP System Integration',
-      'Ongoing SAP Support & Maintenance'
-    ],
-    specialization: 'Enterprise Resource Planning'
-  },
-  dell: {
-    name: 'Dell Technologies',
-    logo: '/src/assets/partner-dell.png',
-    description: 'Authorized Dell partner offering enterprise-grade hardware and infrastructure solutions.',
-    services: [
-      'Dell PowerEdge Servers',
-      'Dell EMC Storage Solutions',
-      'Workstation & Desktop Deployment',
-      'Dell Networking Equipment',
-      'Data Center Infrastructure',
-      'Hardware Warranties & Support',
-      'Technology Refresh Programs'
-    ],
-    specialization: 'Enterprise Hardware & Infrastructure'
-  },
-  hp: {
-    name: 'HP Inc.',
-    logo: '/src/assets/partner-hp.png',
-    description: 'Official HP partner providing business computing and printing solutions.',
-    services: [
-      'HP ProLiant Server Solutions',
-      'HP Elite & Pro Business PCs',
-      'HP Enterprise Printers & MFPs',
-      'HP Workstation Solutions',
-      'HP Networking Products',
-      'Print Management Solutions',
-      'HP Care Pack Services'
-    ],
-    specialization: 'Business Computing & Printing'
-  },
-  aws: {
-    name: 'Amazon Web Services',
-    logo: '/src/assets/partner-aws.png',
-    description: 'AWS certified partner delivering scalable cloud infrastructure and migration services.',
-    services: [
-      'AWS Cloud Architecture Design',
-      'EC2, S3, RDS Deployment',
-      'Cloud Migration Services',
-      'AWS Security & Compliance',
-      'Serverless Architecture (Lambda)',
-      'AWS Cost Optimization',
-      'DevOps & CI/CD on AWS'
-    ],
-    specialization: 'Cloud Infrastructure & Services'
-  },
-  '4sight': {
-    name: '4sight',
-    logo: '/src/assets/partner-4sight.png',
-    description: 'Partnership with 4sight for specialized business intelligence and analytics solutions.',
-    services: [
-      'Business Intelligence Implementation',
-      'Data Analytics Solutions',
-      'Reporting & Dashboards',
-      'Data Warehouse Design',
-      'Predictive Analytics',
-      'Data Integration Services',
-      'BI Training & Support'
-    ],
-    specialization: 'Business Intelligence & Analytics'
-  },
-  huawei: {
-    name: 'Huawei',
-    logo: '/src/assets/partner-huawei.png',
-    description: 'Authorized Huawei partner for networking, telecommunications, and enterprise solutions.',
-    services: [
-      'Huawei Enterprise Networking',
-      'Data Center Servers & Storage',
-      'Wireless & 5G Solutions',
-      'Cloud Data Center Infrastructure',
-      'Video Conferencing Systems',
-      'Security & Firewall Solutions',
-      'Smart Campus Solutions'
-    ],
-    specialization: 'Networking & Telecommunications'
-  },
-  google: {
-    name: 'Google Cloud',
-    logo: '/src/assets/partner-google.png',
-    description: 'Google Cloud partner providing workspace and cloud platform solutions.',
-    services: [
-      'Google Workspace (Gmail, Drive, Meet)',
-      'Google Cloud Platform (GCP)',
-      'BigQuery & Data Analytics',
-      'Google Kubernetes Engine',
-      'Cloud Storage & Computing',
-      'AI & Machine Learning Services',
-      'Google Cloud Migration'
-    ],
-    specialization: 'Workspace & Cloud Platform'
-  },
-  abb: {
-    name: 'ABB',
-    logo: '/src/assets/partner-abb.png',
-    description: 'ABB partner specializing in industrial automation and smart manufacturing solutions.',
-    services: [
-      'Industrial Robotics Integration',
-      'Process Automation Solutions',
-      'SCADA & DCS Systems',
-      'Motor Control & Drives',
-      'PLC Programming & Integration',
-      'Energy Management Systems',
-      'Predictive Maintenance Solutions'
-    ],
-    specialization: 'Industrial Automation & Control'
-  },
-  logpoint: {
-    name: 'Logpoint',
-    logo: '/src/assets/partner-logpoint.png',
-    description: 'Authorized Logpoint partner delivering advanced SIEM, UEBA, and SOAR security solutions.',
-    services: [
-      'SIEM (Security Information & Event Management)',
-      'UEBA (User & Entity Behavior Analytics)',
-      'SOAR (Security Orchestration & Automated Response)',
-      'Threat Intelligence Integration',
-      'Security Operations Center (SOC) Setup',
-      'Compliance & Audit Reporting',
-      '24/7 Security Monitoring'
-    ],
-    specialization: 'Cybersecurity & Threat Detection'
-  }
-};
+const Services = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-const PartnerDetail = () => {
-  const { partnerId } = useParams<{ partnerId: string }>();
-  const navigate = useNavigate();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: ''
-  });
-
-  const partner = partnerId ? partnerData[partnerId] : null;
-
-  if (!partner) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-3xl font-bold mb-4">Partner Not Found</h1>
-          <Button onClick={() => navigate('/')}>Back to Home</Button>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const subject = `Partnership Inquiry: ${partner.name} - ${formData.company || formData.name}`;
-    const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Company: ${formData.company}
-Partner Interest: ${partner.name}
-
-Message:
-${formData.message}
-    `.trim();
-
-    window.location.href = `mailto:maxenciombewe@synkwaresolutions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    toast({
-      title: "Email client opened",
-      description: "Please send the email from your email client.",
-    });
-  };
+  const services = [
+    {
+      icon: Shield,
+      title: 'Cybersecurity Solutions',
+      description: 'Protecting your infrastructure, data, and systems with modern risk-based solutions aligned to ISO 27001 standards.',
+      details: 'Our comprehensive cybersecurity services provide end-to-end protection for your digital assets. We conduct thorough security risk assessments to identify vulnerabilities, perform ethical penetration testing to validate defenses, and help you achieve compliance with international frameworks like ISO 27001, NIST, and GDPR. Our incident response team is available 24/7 to contain and remediate security breaches, while our training programs empower your staff to become the first line of defense against cyber threats.',
+      features: [
+        'Security Risk Assessments',
+        'Penetration Testing',
+        'Compliance Frameworks',
+        'Incident Response',
+        'Security Training'
+      ],
+      technologies: ['ISO 27001', 'NIST', 'SOC 2', 'PCI-DSS'],
+      badge: 'Government Grade'
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud Infrastructure & DevOps',
+      description: 'Migrate, deploy, and scale applications using agile, cost-efficient cloud infrastructure.',
+      details: 'Transform your IT infrastructure with cloud-native architecture. We design and implement robust cloud migration strategies that minimize downtime and maximize ROI. Our DevOps expertise enables continuous integration and deployment pipelines, automated infrastructure provisioning using Terraform and CloudFormation, and comprehensive monitoring solutions. We optimize cloud costs while ensuring high availability, disaster recovery, and scalability to meet your growing business demands.',
+      features: [
+        'Cloud Migration Strategy',
+        'AWS/Azure Implementation',
+        'DevOps Pipeline Setup',
+        'Infrastructure as Code',
+        'Monitoring & Optimization'
+      ],
+      technologies: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'Terraform', 'Docker'],
+      badge: 'Scalable'
+    },
+    {
+      icon: Bot,
+      title: 'AI & Automation Tools',
+      description: 'From task automation to data modeling — we build custom tools powered by open-source intelligence and machine learning.',
+      details: 'Leverage artificial intelligence to automate complex business processes and gain predictive insights. We develop custom AI solutions including intelligent chatbots for customer service, machine learning models for predictive analytics, and automated data processing pipelines. Our solutions integrate seamlessly with your existing systems, using open-source frameworks like TensorFlow and PyTorch to deliver cost-effective, scalable AI capabilities that drive operational efficiency and competitive advantage.',
+      features: [
+        'Process Automation',
+        'Predictive Analytics',
+        'Chatbot Development',
+        'Data Processing',
+        'ML Model Development'
+      ],
+      technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Python', 'Scikit-learn'],
+      badge: 'Intelligent'
+    },
+    {
+      icon: Code,
+      title: 'Custom Software & Web3 Development',
+      description: 'Bespoke software solutions and blockchain applications tailored to your specific business requirements.',
+      details: 'We build custom software that perfectly aligns with your unique business processes. From modern web applications using React and Next.js to native mobile apps for iOS and Android, we deliver high-quality, maintainable code. Our Web3 expertise includes blockchain development, smart contract creation on Ethereum and Solana, DeFi protocol implementation, and NFT marketplace development. We follow agile methodologies to ensure rapid iteration and delivery of value.',
+      features: [
+        'Web Application Development',
+        'Mobile App Development',
+        'Blockchain Solutions',
+        'Smart Contracts',
+        'DeFi Applications'
+      ],
+      technologies: ['React', 'Node.js', 'Solidity', 'Ethereum', 'Solana', 'Web3.js'],
+      badge: 'Future-Ready'
+    },
+    {
+      icon: Settings,
+      title: 'IT Consulting',
+      description: 'Strategic technology consulting to align your IT infrastructure with business objectives and industry best practices.',
+      details: 'Our experienced consultants provide strategic guidance to help you make informed technology decisions. We assess your current IT landscape, identify gaps and opportunities, and develop comprehensive digital transformation roadmaps. From vendor selection and contract negotiation to project management and change management, we ensure successful technology initiatives. Our training programs equip your team with the skills needed to leverage new technologies effectively.',
+      features: [
+        'Digital Strategy',
+        'Technology Assessment',
+        'Vendor Selection',
+        'Project Management',
+        'Training & Support'
+      ],
+      technologies: ['ITIL', 'TOGAF', 'Agile', 'Scrum', 'PMP'],
+      badge: 'Strategic'
+    },
+    {
+      id: 'sap-erp',
+      icon: Database,
+      title: 'SAP ERP Solutions',
+      description: 'Enterprise resource planning implementation and optimization to streamline your business processes.',
+      details: 'As a certified SAP partner, we deliver comprehensive ERP solutions that unify all aspects of your business operations. We specialize in SAP S/4HANA implementation for large enterprises and SAP Business One for SMEs. Our services include module customization, system integration, data migration, and ongoing support. We help you leverage SAP to achieve real-time visibility, streamline processes, and make data-driven decisions that accelerate growth.',
+      features: [
+        'SAP S/4HANA Implementation',
+        'SAP Business One',
+        'Module Customization',
+        'Migration & Upgrade',
+        'SAP Training & Support'
+      ],
+      technologies: ['SAP S/4HANA', 'SAP Business One', 'SAP FICO', 'SAP MM', 'SAP SD'],
+      badge: 'Enterprise'
+    },
+    {
+      id: 'cloud-platform',
+      icon: Server,
+      title: 'Cloud Platform Services',
+      description: 'Multi-cloud solutions leveraging AWS, Azure, and Google Cloud for optimal performance and reliability.',
+      details: 'Navigate the cloud landscape with expert guidance across multiple platforms. We architect scalable, secure cloud solutions using AWS, Microsoft Azure, and Google Cloud Platform. Our multi-cloud approach prevents vendor lock-in while optimizing costs and performance. We implement hybrid cloud strategies that seamlessly integrate on-premises infrastructure with cloud services, ensuring business continuity and flexibility as your needs evolve.',
+      features: [
+        'AWS Cloud Architecture',
+        'Microsoft Azure Solutions',
+        'Google Cloud Platform',
+        'Hybrid Cloud Setup',
+        'Multi-Cloud Management'
+      ],
+      technologies: ['AWS', 'Azure', 'Google Cloud', 'Hybrid Cloud', 'Cloud Migration'],
+      badge: 'Multi-Cloud'
+    },
+    {
+      id: 'hardware-infrastructure',
+      icon: HardDrive,
+      title: 'Hardware & Infrastructure',
+      description: 'Enterprise hardware solutions from industry leaders including Dell, HP, and Huawei.',
+      details: 'Build a robust IT foundation with enterprise-grade hardware from industry leaders. As authorized partners of Dell, HP, and Huawei, we provide server infrastructure, storage solutions, and workstation deployments backed by manufacturer warranties. Our hardware maintenance services ensure maximum uptime, while our technology refresh programs keep your infrastructure modern and efficient. We design data center solutions that balance performance, reliability, and cost-effectiveness.',
+      features: [
+        'Server Infrastructure',
+        'Storage Solutions',
+        'Workstation Deployment',
+        'Hardware Maintenance',
+        'Technology Refresh'
+      ],
+      technologies: ['Dell PowerEdge', 'HP ProLiant', 'Huawei Servers', 'EMC Storage', 'NetApp'],
+      badge: 'Reliable'
+    },
+    {
+      id: 'microsoft-solutions',
+      icon: Briefcase,
+      title: 'Microsoft Solutions',
+      description: 'Complete Microsoft ecosystem services from Office 365 to enterprise cloud infrastructure.',
+      details: 'Maximize productivity and collaboration with Microsoft\'s comprehensive technology suite. We deploy and manage Microsoft 365 environments, including Exchange, SharePoint, and Teams. Our Windows Server expertise covers Active Directory, Group Policy, and infrastructure management. We help you optimize licensing costs through strategic volume agreements and provide ongoing support to ensure your Microsoft investments deliver maximum value.',
+      features: [
+        'Microsoft 365 Deployment',
+        'Windows Server Solutions',
+        'Active Directory Services',
+        'Microsoft Teams Integration',
+        'License Management'
+      ],
+      technologies: ['Microsoft 365', 'Azure AD', 'Windows Server', 'Exchange', 'SharePoint'],
+      badge: 'Productivity'
+    },
+    {
+      id: 'networking-telecom',
+      icon: Network,
+      title: 'Networking & Telecommunications',
+      description: 'Advanced networking solutions powered by Huawei, ABB, and industry-leading technologies.',
+      details: 'Design and implement secure, high-performance network infrastructure. We provide end-to-end networking solutions including LAN/WAN design, wireless infrastructure, SD-WAN implementation, and network security. Our expertise spans Cisco, Huawei, and Fortinet technologies. We implement robust VPN solutions for secure remote access, deploy next-generation firewalls, and provide 24/7 network monitoring to ensure optimal performance and security.',
+      features: [
+        'Network Design & Setup',
+        'Wireless Infrastructure',
+        'Security & Firewall',
+        'VPN & Remote Access',
+        'Network Monitoring'
+      ],
+      technologies: ['Cisco', 'Huawei', 'Fortinet', 'Aruba', 'SD-WAN', 'Wi-Fi 6'],
+      badge: 'Connected'
+    },
+    {
+      id: 'industrial-automation',
+      icon: Cpu,
+      title: 'Industrial Automation',
+      description: 'Smart manufacturing and industrial automation solutions leveraging ABB technologies.',
+      details: 'Transform your manufacturing operations with Industry 4.0 technologies. As an ABB partner, we integrate industrial robotics, implement SCADA systems for real-time monitoring and control, and deploy IoT sensors for predictive maintenance. Our automation solutions increase production efficiency, reduce downtime, and improve quality control. We design smart factory systems that provide complete visibility and control over your manufacturing processes.',
+      features: [
+        'Robotics Integration',
+        'Process Automation',
+        'SCADA Systems',
+        'IoT Solutions',
+        'Predictive Maintenance'
+      ],
+      technologies: ['ABB Robotics', 'Siemens PLC', 'SCADA', 'Industrial IoT', 'OPC UA'],
+      badge: 'Industry 4.0'
+    },
+    {
+      id: 'software-licensing',
+      icon: Package,
+      title: 'Software Licensing & Support',
+      description: 'Authorized licensing and support for Microsoft, SAP, Google, and enterprise software solutions.',
+      details: 'Simplify software procurement and management through our authorized partnerships. We provide competitive pricing on enterprise software licenses from Microsoft, SAP, Google, Adobe, and other leading vendors. Our software asset management services ensure compliance, optimize costs, and track license utilization. We manage renewals proactively and provide technical support to maximize the value of your software investments.',
+      features: [
+        'License Procurement',
+        'Volume Licensing',
+        'Software Asset Management',
+        'Renewal Management',
+        'Technical Support'
+      ],
+      technologies: ['Microsoft', 'SAP', 'Google Workspace', 'Adobe', 'Oracle', 'Autodesk'],
+      badge: 'Certified Partner'
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen gradient-midnight">
       <Header />
       
-      <main className="container mx-auto px-4 py-12">
-        <Button 
-          variant="ghost" 
-          onClick={() => navigate('/')}
-          className="mb-8"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Home
-        </Button>
-
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <div className="bg-card p-8 rounded-lg mb-8">
-              <img 
-                src={partner.logo} 
-                alt={partner.name}
-                className="h-20 object-contain mb-6"
-              />
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm mb-4">
-                {partner.specialization}
-              </span>
-              <h1 className="text-4xl font-bold mb-4">{partner.name} Solutions</h1>
-              <p className="text-muted-foreground text-lg">{partner.description}</p>
-            </div>
-
-            <div className="bg-card p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-6">Authorized Services</h2>
-              <ul className="space-y-3">
-                {partner.services.map((service, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <span className="text-muted-foreground">{service}</span>
-                  </li>
-                ))}
-              </ul>
+      <main>
+        {/* Hero Section */}
+        <section className="py-20 gradient-luxury text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-foreground to-accent bg-clip-text text-transparent">
+                Our Services
+              </h1>
+              <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+                Comprehensive technology solutions designed to secure, scale, and synchronize your business operations.
+              </p>
             </div>
           </div>
+        </section>
 
-          <div className="bg-card p-8 rounded-lg h-fit sticky top-24">
-            <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-            <p className="text-muted-foreground mb-6">
-              Interested in {partner.name} solutions? Contact us to discuss your requirements.
-            </p>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="text-sm font-medium mb-2 block">Full Name *</label>
-                <Input
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  placeholder="John Doe"
-                />
-              </div>
+        {/* Services Grid */}
+        <section className="py-16 bg-gradient-to-b from-primary-dark/50 to-primary/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <Collapsible
+                  key={index}
+                  open={expandedIndex === index}
+                  onOpenChange={(open) => setExpandedIndex(open ? index : null)}
+                >
+                  <Card className="shadow-luxury gradient-card border-accent/20 hover:shadow-glow transition-all duration-300 group">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <service.icon size={24} className="text-accent-foreground" />
+                          </div>
+                          <div>
+                            <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
+                            <Badge variant="secondary" className="mt-1">
+                              {service.badge}
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-card-foreground mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                      
+                      <div className="space-y-3 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center space-x-2">
+                            <CheckCircle size={16} className="text-accent flex-shrink-0" />
+                            <span className="text-sm text-card-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
 
-              <div>
-                <label className="text-sm font-medium mb-2 block">Email *</label>
-                <Input
-                  required
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  placeholder="john@company.com"
-                />
-              </div>
+                      <CollapsibleContent className="space-y-4 animate-accordion-down">
+                        <div className="pt-4 border-t border-accent/20">
+                          <h4 className="text-sm font-semibold text-primary mb-3">About This Service</h4>
+                          <p className="text-sm text-card-foreground/80 leading-relaxed mb-4">
+                            {service.details}
+                          </p>
+                          
+                          {service.technologies && (
+                            <div>
+                              <h4 className="text-sm font-semibold text-primary mb-2">Technologies & Tools</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {service.technologies.map((tech, techIndex) => (
+                                  <Badge key={techIndex} variant="outline" className="text-xs">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </CollapsibleContent>
 
-              <div>
-                <label className="text-sm font-medium mb-2 block">Phone Number</label>
-                <Input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  placeholder="+1 (555) 000-0000"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-2 block">Company Name</label>
-                <Input
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
-                  placeholder="Your Company"
-                />
-              </div>
-
-              <div>
-                <label className="text-sm font-medium mb-2 block">Message *</label>
-                <Textarea
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  placeholder="Tell us about your requirements..."
-                  rows={5}
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                <Mail className="mr-2 h-4 w-4" />
-                Send Inquiry
-              </Button>
-            </form>
-
-            <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-sm text-muted-foreground mb-2">Direct Contact:</p>
-              <a href="mailto:maxenciombewe@synkwaresolutions.com" className="text-sm text-primary hover:underline block">
-                maxenciombewe@synkwaresolutions.com
-              </a>
+                      <CollapsibleTrigger asChild>
+                        <Button 
+                          variant="outline" 
+                          className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 mt-4"
+                        >
+                          {expandedIndex === index ? 'Show Less' : 'Learn More'}
+                          {expandedIndex === index ? (
+                            <ChevronUp size={16} className="ml-2" />
+                          ) : (
+                            <ChevronDown size={16} className="ml-2" />
+                          )}
+                        </Button>
+                      </CollapsibleTrigger>
+                    </CardContent>
+                  </Card>
+                </Collapsible>
+              ))}
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-16 bg-gradient-to-b from-primary/30 to-primary-dark/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-primary-foreground mb-4">Our Approach</h2>
+              <p className="text-primary-foreground/80 text-lg">
+                A proven methodology that ensures successful project delivery
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { step: '01', title: 'Discovery', description: 'We analyze your needs and understand your business objectives.' },
+                { step: '02', title: 'Strategy', description: 'We develop a comprehensive solution strategy tailored to your requirements.' },
+                { step: '03', title: 'Implementation', description: 'We execute the solution using agile methodologies and best practices.' },
+                { step: '04', title: 'Support', description: 'We provide ongoing support and optimization to ensure continued success.' }
+              ].map((process, index) => (
+                <Card key={index} className="text-center shadow-luxury gradient-card border-accent/20">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-gold">
+                      <span className="text-accent-foreground font-bold text-lg">{process.step}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-primary mb-3">{process.title}</h3>
+                    <p className="text-card-foreground text-sm">{process.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-gradient-to-b from-primary-dark/50 to-primary/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Card className="gradient-hero text-primary-foreground shadow-glow">
+              <CardContent className="p-12 text-center">
+                <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+                <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+                  Let's discuss how our services can help you achieve your technology goals and drive your business forward.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" variant="secondary" className="shadow-elegant">
+                    Book a Consultation
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                    Download Company Profile
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
       </main>
 
       <Footer />
@@ -338,4 +380,4 @@ ${formData.message}
   );
 };
 
-export default PartnerDetail;
+export default Services;
