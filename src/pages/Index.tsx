@@ -20,7 +20,7 @@ import partner4sight from "@/assets/partner-4sight.png";
 import partnerHuawei from "@/assets/partner-huawei.png";
 import partnerGoogle from "@/assets/partner-google.png";
 import partnerABB from "@/assets/partner-abb.png";
-import partnerLogpoint from "@/assets/partner-logpoint.png";
+import partnerLogpoint from "@/assets/partner-log.png";
 
 const services = [
   {
