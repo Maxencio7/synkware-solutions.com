@@ -227,7 +227,7 @@ ${formData.message}
           onClick={() => navigate('/')}
           className="mb-8"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <ArrowLeft className="mr-2 h-4 w-4 bg-primary-foreground/30" />
           Back to Home
         </Button>
 
