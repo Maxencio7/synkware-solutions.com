@@ -124,10 +124,10 @@ const features = [
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechCorp Industries",
+    name: "Steve Phiri",
+    role: "General Manager, Apeiron Mining Limited",
     content:
-      "SYNKWARE transformed our logistics operations. We've seen a 60% reduction in shipping costs and 99% accuracy in deliveries.",
+      "SYNKWARE transformed our on prem and cloud operations. We've seen a significant reduction in work overload, increase in accuracy in deliveries and executions.",
     rating: 5,
   },
   {
