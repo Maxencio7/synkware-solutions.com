@@ -241,7 +241,7 @@ const Index = () => {
               {stats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-500 group animate-fade-in hover:-translate-y-2"
+                  className="text-center gradient-card border-0 shadow-elegant bg-accent hover:shadow-glow transition-all duration-500 group animate-fade-in hover:-translate-y-2"
                   style={{
                     animationDelay: `${index * 150}ms`,
                     animationFillMode: "backwards",
