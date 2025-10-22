@@ -49,7 +49,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <Button className="gradient-accent text-accent-foreground hover:opacity-90 shadow-elegant">
-              <Join></Join> Us
+              Join Us
             </Button>
           </div>
 
