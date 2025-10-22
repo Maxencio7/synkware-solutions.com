@@ -166,7 +166,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gold/10 scroll-smooth">
+    <div className="min-h-screen bg-primary scroll-smooth">
       <Header />
 
       <main>
