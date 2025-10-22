@@ -342,7 +342,7 @@ const Index = () => {
               <Link to="/services">
                 <Button
                   size="lg"
-                  className="gradient-primary text-primary-foreground shadow-elegant hover:scale-105 transition-all duration-300"
+                  className="gradient-primary text-primary-foreground shadow-elegant bg-accent hover:scale-105 transition-all duration-300"
                 >
                   View All Services
                   <ArrowRight size={20} className="ml-2" />
