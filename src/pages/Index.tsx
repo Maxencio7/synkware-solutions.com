@@ -581,7 +581,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-accent/30 bg-accent/10 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  className="border-accent/30 bg-accent hover:bg-accent/10 hover:border-accent transition-all duration-300"
                 >
                   Get In Touch
                   <ArrowRight size={20} className="ml-2" />
@@ -677,7 +677,7 @@ const Index = () => {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground bg-primary-foreground/30 hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300"
+                      className="text-lg px-8 py-4 border-primary-foreground/30 text-primary-foreground bg-accent hover:bg-primary-foreground/10 hover:border-primary-foreground backdrop-blur-sm transition-all duration-300"
                     >
                       Explore Our Services
                       <ArrowRight size={20} className="ml-2" />
