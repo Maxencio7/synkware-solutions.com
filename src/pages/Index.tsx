@@ -193,21 +193,20 @@ const Index = () => {
                 <Calendar className="mr-2" size={20} />
                 Contact Us
               </Button>
-              {/* <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-lg px-8 py-4 border-accent/50 text-primary-foreground bg-accent/30 hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '#';
-                  link.download = 'SYNKWARE-Solutions-Company-Profile.pdf';
-                  link.target = '_blank';
+                  const link = document.createElement("a");
+                  link.href = "#";
+                  link.download = "SYNKWARE-Solutions-Company-Profile.pdf";
+                  link.target = "_blank";
                   link.click();
                 }}
               >
                 <Download className="mr-2" size={20} />
-                Join Us
-              </Button> */}
+              </Button>
             </div>
           </div>
         </section>
