@@ -492,7 +492,7 @@ const Index = () => {
                     id: "microsoft",
                     logo: partnerMicrosoft,
                     name: "Microsoft",
-                    shape: "65% 35% 70% 30% / 50% 60% 40% 50%",
+                    shape: "50% 50% 50% 50% / 50% 50% 50% 50%",
                   },
                   {
                     id: "sap",
