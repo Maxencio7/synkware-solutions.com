@@ -31,6 +31,7 @@ import {
   Calendar,
   Quote,
 } from "lucide-react";
+import heroVideo from "@/assets/hero-automation.mp4";
 import heroImage from "@/assets/hero-automation.jpg";
 import serviceBIImage from "@/assets/service-bi.jpg";
 import serviceLogisticsImage from "@/assets/service-logistics.jpg";
