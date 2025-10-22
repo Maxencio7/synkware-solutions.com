@@ -559,7 +559,7 @@ const Index = () => {
                       borderRadius: partner.shape,
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-primary from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute inset-0 animate-[spin_20s_linear_infinite] opacity-0 group-hover:opacity-20">
                       <div className="h-full w-full bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
                     </div>
