@@ -235,9 +235,9 @@ const Index = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-primary from-muted/30 to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <section className="py-20 bg-accent from-muted/30 to-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-accent">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-accent">
               {stats.map((stat, index) => (
                 <Card
                   key={index}
