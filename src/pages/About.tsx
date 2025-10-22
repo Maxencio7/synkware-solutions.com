@@ -3,16 +3,6 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Users, Globe } from "lucide-react";
-import partnerMicrosoft from "@/assets/partner-microsoft.png";
-import partnerSAP from "@/assets/partner-sap.png";
-import partnerDell from "@/assets/partner-dell.png";
-import partnerHP from "@/assets/partner-hp.png";
-import partnerAWS from "@/assets/partner-aws.png";
-import partner4sight from "@/assets/partner-4sight.png";
-import partnerHuawei from "@/assets/partner-huawei.png";
-import partnerGoogle from "@/assets/partner-google.png";
-import partnerABB from "@/assets/partner-abb.png";
-import partnerLogpoint from "@/assets/partner-log.png";
 
 const About = () => {
   const values = [

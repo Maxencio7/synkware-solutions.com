@@ -38,6 +38,16 @@ import serviceLogisticsImage from "@/assets/service-logistics.jpg";
 import serviceAutomationImage from "@/assets/service-automation.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import techBgImage from "@/assets/tech-background.jpg";
+import partnerMicrosoft from "@/assets/partner-microsoft.png";
+import partnerSAP from "@/assets/partner-sap.png";
+import partnerDell from "@/assets/partner-dell.png";
+import partnerHP from "@/assets/partner-hp.png";
+import partnerAWS from "@/assets/partner-aws.png";
+import partner4sight from "@/assets/partner-4sight.png";
+import partnerHuawei from "@/assets/partner-huawei.png";
+import partnerGoogle from "@/assets/partner-google.png";
+import partnerABB from "@/assets/partner-abb.png";
+import partnerLogpoint from "@/assets/partner-log.png";
 
 const services = [
   {
