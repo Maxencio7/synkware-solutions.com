@@ -235,7 +235,7 @@ const Index = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+        <section className="py-20 bg-primary from-muted/30 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -265,7 +265,7 @@ const Index = () => {
         </section>
 
         {/* Partners Section */}
-        <section className="py-20 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
+        <section className="py-20 bg-primary from-background to-muted/30 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
@@ -376,7 +376,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-accent/30 bg-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  className="border-accent/30 bg-accent/10 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                 >
                   Get In Touch
                   <ArrowRight size={20} className="ml-2" />
@@ -488,7 +488,7 @@ const Index = () => {
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
                 Why Choose Us
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Built for Performance
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -528,7 +528,7 @@ const Index = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+        <section className="py-20 bg-primary from-muted/30 to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">

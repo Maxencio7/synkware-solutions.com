@@ -32,7 +32,7 @@ const PageLoader = () => {
           {/* Center content */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary mb-1">
+              <div className="text-2xl font-bold text-white mb-1">
                 {progress}%
               </div>
               <div className="text-xs text-muted-foreground">Loading</div>
