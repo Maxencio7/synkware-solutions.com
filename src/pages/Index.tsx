@@ -166,23 +166,23 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background scroll-smooth">
+    <div className="min-h-screen bg-background-midnight scroll-smooth">
       <Header />
 
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-           <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-          <source src={heroVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={heroVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className="absolute inset-0 gradient opacity-85" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent" />
           </div>
@@ -193,14 +193,13 @@ const Index = () => {
             </Badge>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 tracking-tight drop-shadow-2xl">
-              
               <span className="text-accent drop-shadow-glow">Analyze.</span>{" "}
               Accelerate.
             </h1>
 
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your business with IT solutions, intelligent
-              analytics, and seamless system logistics solutions.
+              Transform your business with IT solutions, intelligent analytics,
+              and seamless system logistics solutions.
             </p>
 
             <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
