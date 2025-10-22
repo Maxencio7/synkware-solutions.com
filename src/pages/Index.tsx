@@ -210,7 +210,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="text-lg px-8 py-4 border-accent/50 text-primary-foreground bg-background hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
+                className="text-lg px-8 py-4 border-accent/50 text-primary-foreground bg-accent hover:bg-accent/20 hover:border-accent backdrop-blur-sm transition-all duration-300 hover:shadow-gold"
               >
                 <Calendar className="mr-2" size={20} />
                 Contact Us
