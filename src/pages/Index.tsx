@@ -199,8 +199,8 @@ const Index = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your business with AI-powered automation, intelligent
-              analytics, and seamless logistics solutions.
+              Transform your business with IT solutions, intelligent
+              analytics, and seamless system logistics solutions.
             </p>
 
             <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
