@@ -630,7 +630,7 @@ const Index = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                    className="border-accent/30 bg-accent/10 hover:bg-accent/10 hover:border-accent transition-all duration-300"
                   >
                     Meet Our Team
                     <ArrowRight size={20} className="ml-2" />
