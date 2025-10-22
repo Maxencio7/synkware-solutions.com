@@ -48,9 +48,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button className="gradient-accent text-accent-foreground hover:opacity-90 shadow-elegant">
-              Join Us
-            </Button>
+            <Link to="/contact">
+              <Button className="gradient-accent text-accent-foreground hover:opacity-90 shadow-elegant">
+                Join Us
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
