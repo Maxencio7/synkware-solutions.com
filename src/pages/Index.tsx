@@ -173,12 +173,17 @@ const Index = () => {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={heroImage}
-              alt="Professional automation workspace"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 gradient-midnight opacity-85" />
+           <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+            <div className="absolute inset-0 gradient opacity-85" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent" />
           </div>
 
