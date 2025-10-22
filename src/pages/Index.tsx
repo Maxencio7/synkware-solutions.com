@@ -193,7 +193,7 @@ const Index = () => {
             </Badge>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 tracking-tight drop-shadow-2xl">
-              Automate.{" "}
+              
               <span className="text-accent drop-shadow-glow">Analyze.</span>{" "}
               Accelerate.
             </h1>
