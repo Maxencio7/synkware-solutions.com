@@ -303,7 +303,7 @@ const About = () => {
               ].map((partner, index) => (
                 <Link
                   key={index}
-                  to={`/partners/${partner.id}`}
+                  to="/contact"
                   className="group relative flex items-center justify-center aspect-square bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-accent shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-110 hover:-translate-y-2 animate-fade-in cursor-pointer overflow-hidden"
                   style={{
                     animationDelay: `${index * 80}ms`,
