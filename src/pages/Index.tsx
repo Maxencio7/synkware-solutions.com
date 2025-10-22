@@ -166,7 +166,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-midnight scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-br from-[#0F172A] to-[#1E293B] backdrop-blur-sm border-b border-accent/20 sticky top-0 z-50 shadow-luxury scroll-smooth">
       <Header />
 
       <main>
