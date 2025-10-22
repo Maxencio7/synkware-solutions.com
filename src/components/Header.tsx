@@ -85,9 +85,11 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full gradient-accent text-accent-foreground">
-                  Join Us
-                </Button>
+                <Link to="/contact">
+                  <Button className="w-full gradient-accent text-accent-foreground">
+                    Join Us
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
