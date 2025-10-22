@@ -25,7 +25,7 @@ const Header = () => {
             <img
               src="/lovable-uploads/31a64750-09a3-46f5-af3d-990734b9dfcc.png"
               alt="SYNKWARE Solutions Logo"
-              className="h-16 w-auto object-contain"
+              className="h-28 w-auto object-contain"
             />
           </Link>
 
@@ -49,7 +49,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <Button className="gradient-accent text-accent-foreground hover:opacity-90 shadow-elegant">
-              Book Consultation
+              <Join></Join> Us
             </Button>
           </div>
 
@@ -84,7 +84,7 @@ const Header = () => {
               ))}
               <div className="px-3 py-2">
                 <Button className="w-full gradient-accent text-accent-foreground">
-                  Book Consultation
+                  Join Us
                 </Button>
               </div>
             </div>
