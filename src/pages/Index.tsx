@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PageLoader from "@/components/PageLoader";
 import { Link } from "react-router-dom";
 import {
   BarChart3,
@@ -149,23 +147,8 @@ const testimonials = [
 ];
 
 const Index = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <PageLoader />;
-  }
-
   return (
-    <div className="min-h-screen bg-background scroll-smooth">
+    <div className="min-h-screen bg-background">
       <Header />
 
       <main>
@@ -236,17 +219,13 @@ const Index = () => {
               {stats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-500 group animate-fade-in hover:-translate-y-2"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}
+                  className="text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 group"
                 >
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                    <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <stat.icon size={32} className="text-accent-foreground" />
                     </div>
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2 transition-all duration-300 group-hover:scale-110">
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                       {stat.number}
                     </div>
                     <div className="text-muted-foreground font-medium">
@@ -282,81 +261,31 @@ const Index = () => {
                     id: "microsoft",
                     logo: partnerMicrosoft,
                     name: "Microsoft",
-                    shape: "65% 35% 70% 30% / 50% 60% 40% 50%",
                   },
-                  {
-                    id: "sap",
-                    logo: partnerSAP,
-                    name: "SAP",
-                    shape: "40% 60% 55% 45% / 60% 50% 50% 40%",
-                  },
-                  {
-                    id: "dell",
-                    logo: partnerDell,
-                    name: "Dell",
-                    shape: "55% 45% 45% 55% / 65% 35% 65% 35%",
-                  },
-                  {
-                    id: "hp",
-                    logo: partnerHP,
-                    name: "HP",
-                    shape: "50% 50% 70% 30% / 45% 55% 45% 55%",
-                  },
-                  {
-                    id: "aws",
-                    logo: partnerAWS,
-                    name: "AWS",
-                    shape: "45% 55% 50% 50% / 55% 45% 60% 40%",
-                  },
-                  {
-                    id: "4sight",
-                    logo: partner4sight,
-                    name: "4sight",
-                    shape: "60% 40% 60% 40% / 50% 50% 50% 50%",
-                  },
-                  {
-                    id: "huawei",
-                    logo: partnerHuawei,
-                    name: "Huawei",
-                    shape: "35% 65% 55% 45% / 70% 30% 60% 40%",
-                  },
-                  {
-                    id: "google",
-                    logo: partnerGoogle,
-                    name: "Google",
-                    shape: "70% 30% 50% 50% / 40% 60% 50% 50%",
-                  },
-                  {
-                    id: "abb",
-                    logo: partnerABB,
-                    name: "ABB",
-                    shape: "50% 50% 60% 40% / 65% 35% 55% 45%",
-                  },
-                  {
-                    id: "logpoint",
-                    logo: partnerLogpoint,
-                    name: "Logpoint",
-                    shape: "40% 60% 45% 55% / 55% 45% 70% 30%",
-                  },
+                  { id: "sap", logo: partnerSAP, name: "SAP" },
+                  { id: "dell", logo: partnerDell, name: "Dell" },
+                  { id: "hp", logo: partnerHP, name: "HP" },
+                  { id: "aws", logo: partnerAWS, name: "AWS" },
+                  { id: "4sight", logo: partner4sight, name: "4sight" },
+                  { id: "huawei", logo: partnerHuawei, name: "Huawei" },
+                  { id: "google", logo: partnerGoogle, name: "Google" },
+                  { id: "abb", logo: partnerABB, name: "ABB" },
+                  { id: "logpoint", logo: partnerLogpoint, name: "Logpoint" },
                 ].map((partner, index) => (
                   <Link
                     key={index}
                     to={`/partners/${partner.id}`}
-                    className="group relative flex items-center justify-center aspect-square bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-accent shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-110 hover:-translate-y-2 animate-fade-in cursor-pointer overflow-hidden"
+                    className="group relative flex items-center justify-center p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 shadow-sm hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in cursor-pointer"
                     style={{
-                      animationDelay: `${index * 80}ms`,
+                      animationDelay: `${index * 100}ms`,
                       animationFillMode: "backwards",
-                      borderRadius: partner.shape,
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-0 animate-[spin_20s_linear_infinite] opacity-0 group-hover:opacity-20">
-                      <div className="h-full w-full bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="relative w-3/5 h-auto object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg"
+                      className="relative w-full h-auto max-h-24 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                     />
                   </Link>
                 ))}
@@ -401,21 +330,17 @@ const Index = () => {
               {services.map((service, index) => (
                 <Card
                   key={index}
-                  className="group gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden animate-fade-in"
-                  style={{
-                    animationDelay: `${index * 200}ms`,
-                    animationFillMode: "backwards",
-                  }}
+                  className="group gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-700"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <div className="w-12 h-12 gradient-luxury rounded-lg flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                      <div className="w-12 h-12 gradient-luxury rounded-lg flex items-center justify-center">
                         <service.icon
                           size={24}
                           className="text-accent-foreground"
@@ -496,20 +421,16 @@ const Index = () => {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="group text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                    animationFillMode: "backwards",
-                  }}
+                  className="group text-center gradient-card border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
                 >
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                    <div className="w-16 h-16 gradient-luxury rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon
                         size={28}
                         className="text-accent-foreground"
                       />
                     </div>
-                    <h3 className="text-lg font-semibold text-primary mb-2 transition-colors duration-300 group-hover:text-accent">
+                    <h3 className="text-lg font-semibold text-primary mb-2">
                       {feature.title}
                     </h3>
                     <p className="text-muted-foreground text-sm">
@@ -542,11 +463,7 @@ const Index = () => {
               {testimonials.map((testimonial, index) => (
                 <Card
                   key={index}
-                  className="gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-500 group hover:-translate-y-2 animate-fade-in"
-                  style={{
-                    animationDelay: `${index * 200}ms`,
-                    animationFillMode: "backwards",
-                  }}
+                  className="gradient-card border-0 shadow-luxury hover:shadow-glow transition-all duration-300 group hover:-translate-y-1"
                 >
                   <CardContent className="p-8">
                     <div className="flex mb-4">
