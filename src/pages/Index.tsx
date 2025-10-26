@@ -48,6 +48,7 @@ import partnerHuawei from "@/assets/partner-huawei.png";
 import partnerGoogle from "@/assets/partner-google.png";
 import partnerABB from "@/assets/partner-abb.png";
 import partnerLogpoint from "@/assets/partner-log.png";
+import partnerLenovo from "@/assets/partner-lenovo.png";
 
 const services = [
   {
@@ -545,6 +546,12 @@ const Index = () => {
                   {
                     id: "logpoint",
                     logo: partnerLogpoint,
+                    name: "Logpoint",
+                    shape: "50% 50% 50% 50% / 50% 50% 50% 50%",
+                  },
+                  {
+                    id: "lenovo",
+                    logo: partnerLenovo,
                     name: "Logpoint",
                     shape: "50% 50% 50% 50% / 50% 50% 50% 50%",
                   },
