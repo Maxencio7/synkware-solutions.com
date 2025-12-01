@@ -346,7 +346,7 @@ const About = () => {
                       100% { transform: translateX(34%); }
                     }
                     .animate-[logos-scroll_7s_linear_infinite] {
-                      animation: logos-scroll 12s linear infinite;
+                      animation: logos-scroll 7s linear infinite;
                     }
                   `}
             </style>
