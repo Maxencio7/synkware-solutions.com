@@ -339,7 +339,7 @@ const About = () => {
               </a>
             </div>
             {/* Custom keyframes for Tailwind animation */}
-            <style>
+            {/* <style>
               {`
                     @keyframes logos-scroll {
                       0% { transform: translateX(0); }
@@ -349,7 +349,7 @@ const About = () => {
                       animation: logos-scroll 7s linear infinite;
                     }
                   `}
-            </style>
+            </style> */}
           </div>
         </div>
       </div>
