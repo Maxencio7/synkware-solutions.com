@@ -343,9 +343,9 @@ const About = () => {
               {`
                     @keyframes logos-scroll {
                       0% { transform: translateX(0); }
-                      100% { transform: translateX(100%); }
+                      100% { transform: translateX(34%); }
                     }
-                    .animate-[logos-scroll_17s_linear_infinite] {
+                    .animate-[logos-scroll_7s_linear_infinite] {
                       animation: logos-scroll 12s linear infinite;
                     }
                   `}
