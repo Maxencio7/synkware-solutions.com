@@ -215,13 +215,13 @@ const About = () => {
 
       {/* Company Logos Section */}
       <div className="company-logos-section py-12 bg-gradient-to-r from-primary-dark/20 to-primary/10">
-        <div className="max-w-2xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8 text-primary-foreground">
             Companies We've Worked With
           </h2>
           <div className="overflow-hidden relative">
             <div
-              className="flex items-center gap-12 animate-[logos-scroll_12s_linear_infinite]"
+              className="flex items-center gap-12 animate-[logos-scroll_7s_linear_infinite]"
               style={{ minWidth: "max-content" }}
             >
               <a href="https://www.apeiron-mining.com/">
