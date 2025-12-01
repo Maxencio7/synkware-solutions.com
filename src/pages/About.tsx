@@ -245,6 +245,13 @@ const About = () => {
                   className="h-20 w-auto object-contain mx-4"
                 />
               </a>
+              <a href="https://www.boz.zm//">
+                <img
+                  src="/companyD.png"
+                  alt="Bank of Zambia"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
               {/* Repeat logos for seamless scroll */}
               <a href="https://www.apeiron-mining.com/">
                 <img
@@ -266,6 +273,13 @@ const About = () => {
                   alt="Borika Investments Limited"
                   className="h-20 w-auto object-contain mx-4"
                 />
+                <a href="https://www.boz.zm//">
+                <img
+                  src="/companyD.png"
+                  alt="Bank of Zambia"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
               </a>
               <a href="https://www.apeiron-mining.com/">
                 <img
@@ -288,6 +302,13 @@ const About = () => {
                   className="h-20 w-auto object-contain mx-4"
                 />
               </a>
+              <a href="https://www.boz.zm//">
+                <img
+                  src="/companyD.png"
+                  alt="Bank of Zambia"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
               <a href="https://www.apeiron-mining.com/">
                 <img
                   src="/companyA.png"
@@ -306,6 +327,13 @@ const About = () => {
                 <img
                   src="/companyC.png"
                   alt="Borika Investments Limited"
+                  className="h-20 w-auto object-contain mx-4"
+                />
+              </a>
+              <a href="https://www.boz.zm//">
+                <img
+                  src="/companyD.png"
+                  alt="Bank of Zambia"
                   className="h-20 w-auto object-contain mx-4"
                 />
               </a>
@@ -315,7 +343,7 @@ const About = () => {
               {`
                     @keyframes logos-scroll {
                       0% { transform: translateX(0); }
-                      100% { transform: translateX(50%); }
+                      100% { transform: translateX(100%); }
                     }
                     .animate-[logos-scroll_17s_linear_infinite] {
                       animation: logos-scroll 12s linear infinite;
