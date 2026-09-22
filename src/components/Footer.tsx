@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Linkedin,Instagram, MapPin, Phone } from 'lucide-react';
-import LinkGuard from "./LinkGuard";
+import LinkGuard from "../pages/LinkGuard";
+
 
 
 
@@ -48,9 +49,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-              <Link to="/LinkGuard" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  LinkGuard
-                </Link>
+            <Link to="/linkguard" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+  LinkGuard
+</Link>
+
               </li>
               <li>
                 <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
