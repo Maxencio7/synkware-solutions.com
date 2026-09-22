@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
+import LinkGuard from "./pages/LinkGuard";
 import NotFound from "./pages/NotFound";
 import PartnerDetail from "./pages/PartnerDetail";
 import ServiceDetail from "./pages/ServiceDetail";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/partners/:partnerId" element={<PartnerDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/linkguard" element={<LinkGuard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
